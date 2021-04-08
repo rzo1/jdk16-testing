@@ -1,5 +1,11 @@
 # How to start
 
+## Notes
+
+- JDK 15 is running fine ;) 
+- It is related to https://openjdk.java.net/jeps/396 (strong encapsulation by default in JDK 16)
+
+## Results
 - Install latest OpenJDK 16. I am using [AdoptOpenJDK](https://adoptopenjdk.net/?variant=openjdk16&jvmVariant=hotspot).
 - `mvn clean install` then `mvn tomee:run`
 

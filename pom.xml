@@ -166,7 +166,8 @@
                     <debug>false</debug>
                     <tomeeHttpPort>8181</tomeeHttpPort>
                     <debugPort>5005</debugPort>
-                    <args>-Dfoo=bar</args>
+                    <!-- add this to allow TomEE to start and deploy as expected -->
+                    <args>--illegal-access=permit</args>
                     <config>${project.build.outputDirectory}/conf/</config>
                     <skipCurrentProject>true</skipCurrentProject>
                     <libs>
