@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+    		 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="demo" transaction-type="JTA">
+        <jta-data-source>java:openejb/Resource/demo</jta-data-source>
+
+        <!-- Classes definition needed only for JPA provider (OpenJPA) -->
+        <class>com.github.rzo1.entities.AbstractBaseEntity</class>
+        <class>com.github.rzo1.entities.DemoEntity</class>
+
+        <properties>
+            <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO"/>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+            <property name="openjpa.jdbc.DBDictionary" value="hsql"/>
+            <property name="openjpa.jdbc.SchemaFactory" value="native(ForeignKeys=true)"/>
+            <property name="openjpa.jdbc.MappingDefaults"
+                      value="ForeignKeyDeleteAction=cascade, JoinForeignKeyDeleteAction=cascade"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
