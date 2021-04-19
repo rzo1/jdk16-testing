@@ -1,5 +1,17 @@
 # How to start
 
+## Update (04/19/2021)
+
+- JDK 16 is running fine, if we add `--illegal-access=permit` to the JVM args.
+- Some changes to the libs folder:
+
+```
+                        <lib>remove:openjpa</lib>
+                        <lib>remove:xbean-asm8-shaded</lib>
+                        <!-- patch OpenJPA here with 3.1.3-SNAPSHOT -->
+                        <lib>org.apache.openjpa:openjpa:${openjpa.version}</lib>
+  ```
+
 ## Notes
 
 - JDK 15 is running fine ;) 
